@@ -87,4 +87,12 @@ if [ -f /usr/local/lib/python3.4/dist-packages/powerline/bindings/bash/powerline
     source /usr/local/lib/python3.4/dist-packages/powerline/bindings/bash/powerline.sh
 fi
 
+# source completion files
+for F in ~/dotfiles/completion/*.bash; do
+    if [ -f "${F}" ]; then
+        source "${F}"
+    fi
+done
+
+# set xterm to 256 colors for powerline support
 export TERM=xterm-256color
