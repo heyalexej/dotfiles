@@ -26,23 +26,28 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 #fast system update
-alias sysup='time sudo apt-get update && echo $(yes - | head -40 | paste -s -d '' -) && time sudo apt-get dist-upgrade -y && echo $(yes - | head -40 | paste -s -d '' -) && time sudo apt-get autoremove -y && echo $(yes - | head -40 | paste -s -d '' -)'
+alias sysup='time sudo apt-get update && \
+	echo $(yes - | head -40 | paste -s -d '' -) && \
+	time sudo apt-get dist-upgrade -y && \
+	echo $(yes - | head -40 | paste -s -d '' -) && \
+	time sudo apt-get autoremove -y && \
+	echo $(yes - | head -40 | paste -s -d '' -)'
 
 # go up N directories
-up () {
-        COUNTER=$1
-        while [[ $COUNTER -gt 0 ]]
-         do
-          UP="${UP}../"
-          COUNTER=$(( $COUNTER -1 ))
-         done
-        echo "cd $UP"
-        cd $UP
-        UP=''
+function up {
+[ "${1/[^0-9]/}" == "$1" ] && {
+        local ups=""
+        for i in $(seq 1 $1)
+        do
+                ups=$ups"../"
+        done
+        cd $ups
+        } || echo "usage: up INTEGER"
 }
 
 alias searchfor='apt-cache search $1'
 
+# sudo!
 bitch() {
     if [[ $1 -eq "please" ]]
     then

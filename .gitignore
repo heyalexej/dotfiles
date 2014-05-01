@@ -1,11 +1,7 @@
 *logs*
 *.log
 *~
-_vim/ropevim/src*
-_vim/ropevim/pylibs*
 *.swp
 *.pyc
-_emacs.d/elpa
-_emacs.d/projectile*
-_weechat/irc.conf
 o_*
+_bash_profile
