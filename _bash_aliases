@@ -1,0 +1,53 @@
+# HTTP serve the current directory to 0.0.0.0 and safety port 8765
+# Detect python version
+ret=`python -c 'import sys; print("%i" % (sys.hexversion<0x03000000))'`
+if [ $ret -eq 0 ]; then    # Python version is >= 3
+    alias serveit='python -m http.server 8765'
+else    # Python version is < 3
+    alias serveit='python -m SimpleHTTPServer 8765'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lsd='ls -d */'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+#fast system update
+alias sysup='time sudo apt-get update && echo $(yes - | head -40 | paste -s -d '' -) && time sudo apt-get dist-upgrade -y && echo $(yes - | head -40 | paste -s -d '' -) && time sudo apt-get autoremove -y && echo $(yes - | head -40 | paste -s -d '' -)'
+
+# go up N directories
+up () {
+        COUNTER=$1
+        while [[ $COUNTER -gt 0 ]]
+         do
+          UP="${UP}../"
+          COUNTER=$(( $COUNTER -1 ))
+         done
+        echo "cd $UP"
+        cd $UP
+        UP=''
+}
+
+alias searchfor='apt-cache search $1'
+
+bitch() {
+    if [[ $1 -eq "please" ]]
+    then
+        eval "sudo $(fc -ln -1)"
+    else
+        sudo "$@"
+    fi
+}
