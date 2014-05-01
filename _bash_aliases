@@ -12,6 +12,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias lsd='ls -d */'
+alias ldot='ls -ld .[^.]*'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -34,7 +35,7 @@ alias sysup='time sudo apt-get update && \
 	echo $(yes - | head -40 | paste -s -d '' -)'
 
 # go up N directories
-function up {
+up() {
 [ "${1/[^0-9]/}" == "$1" ] && {
         local ups=""
         for i in $(seq 1 $1)
