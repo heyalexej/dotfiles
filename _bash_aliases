@@ -57,3 +57,6 @@ bitch() {
         sudo "$@"
     fi
 }
+
+# create & activate virtualenv
+alias vvs='virtualenv venv && source venv/bin/activate'
