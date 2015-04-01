@@ -1,0 +1,4 @@
+[submodule "vendor/prezto"]
+	path = vendor/prezto
+	url = https://github.com/sorin-ionescu/prezto
+	branch = master
