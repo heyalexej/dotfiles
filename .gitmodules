@@ -4,4 +4,4 @@
 	branch = master
 [submodule "vendor/rbenv"]
 	path = vendor/rbenv
-	url = git://github.com/sstephenson/rbenv.git
+	url = git@github.com:sstephenson/rbenv.git
