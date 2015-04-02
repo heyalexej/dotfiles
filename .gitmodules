@@ -1,10 +1,13 @@
-[submodule "vendor/prezto"]
+[submodule "prezto"]
 	path = vendor/prezto
 	url = git@github.com:sorin-ionescu/prezto.git
 	branch = master
-[submodule "vendor/rbenv"]
+[submodule "rbenv"]
 	path = vendor/rbenv
 	url = git@github.com:sstephenson/rbenv.git
-[submodule "link/.rbenv/plugins/rbenv-default-gems"]
+[submodule "rbenv-default-gems"]
 	path = link/.rbenv/plugins/rbenv-default-gems
 	url = git://github.com/sstephenson/rbenv-default-gems.git
+[submodule "git-extras"]
+	path = vendor/git-extras
+	url = git@github.com:tj/git-extras.git
