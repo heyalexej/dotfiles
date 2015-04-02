@@ -5,3 +5,6 @@
 [submodule "vendor/rbenv"]
 	path = vendor/rbenv
 	url = git@github.com:sstephenson/rbenv.git
+[submodule "link/.rbenv/plugins/rbenv-default-gems"]
+	path = link/.rbenv/plugins/rbenv-default-gems
+	url = git://github.com/sstephenson/rbenv-default-gems.git
