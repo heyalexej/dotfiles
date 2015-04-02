@@ -11,3 +11,6 @@
 [submodule "git-extras"]
 	path = vendor/git-extras
 	url = git@github.com:tj/git-extras.git
+[submodule "awesome-copycats"]
+	path = link/.config/awesome
+	url = git://github.com/copycat-killer/awesome-copycats.git
