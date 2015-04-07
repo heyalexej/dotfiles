@@ -1,6 +1,7 @@
 *logs*
 *.log
 *~
+*.test
 *.swp
 *.DS_Store
 *.pyc
